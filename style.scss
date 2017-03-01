@@ -1,0 +1,68 @@
+html{
+  height: 100%;
+}
+
+body{
+  font-family: Noto,Roboto;
+  background-color:#000000;
+  color:#ffffff;
+  height:100%;
+}
+
+.fa-github{
+  font-size: 40px;
+  &:hover{
+    color: #F8BBD0;
+  }
+}
+
+.vertical-center{
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  height: 0px;
+  right: 0;
+}
+
+#navbar{
+  top: 0;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1;
+  height: 90px;
+  background-color: black;
+  border-bottom:1px solid white;
+  text-align: center;
+  .nav-item{
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    width:100px;
+    line-height: 100px;
+    a{
+      height: 100%;
+      font-size: 24px;
+      color:white;
+    }
+  }
+}
+
+#main{
+  position: relative;
+  padding-top: 90px;
+  text-align: center;
+  height: 100%;
+
+}
+
+@media(max-width:768px){
+  h1{
+    font-size: 32px;
+  }
+  h4{
+    font-size: 16px;
+  }
+}
