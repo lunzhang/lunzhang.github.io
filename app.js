@@ -13,6 +13,8 @@ export class App{
     window.addEventListener('resize',(e)=>{
       this.resizeCanvas();
     });
+    
+    this.network.animateSpark();
 
   }
 
