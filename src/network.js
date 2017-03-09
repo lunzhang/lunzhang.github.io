@@ -15,7 +15,11 @@ export default class Network{
     for(let prop in networkNodes){
       this.neurons[prop] = (new Neuron(networkNodes[prop]));
     }
-    this.sparks.push(new Spark(this.neurons[1]));
+    this.animate();
+  }
+
+  addSpark(){
+    this.sparks.push(new Spark(networkNodes[Math.floor(Math.random()*50+1)]));
   }
 
   drawNeurons(){
@@ -32,11 +36,24 @@ export default class Network{
 
   }
 
-  animateSpark(){
+  drawSparks(){
+      let ctx = this.canvas.getContext('2d');
+      for(let i = 0;i<this.sparks.length;i++){
+        if(!this.sparks[i].draw(ctx)){
+            this.sparks.splice(i,1);
+            i--;
+        }
+      }
+  }
+
+  animate(){
     let ctx = this.canvas.getContext('2d');
-    for(let i = 0;i<this.sparks.length;i++){
-      this.sparks[i].draw(ctx);
-    }
+    ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
+    this.drawNeurons();
+    this.drawSparks();
+    requestAnimationFrame(()=>{
+        this.animate();
+    });
   }
 
 }

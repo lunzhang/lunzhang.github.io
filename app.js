@@ -13,18 +13,17 @@ export class App{
     window.addEventListener('resize',(e)=>{
       this.resizeCanvas();
     });
-    
-    this.network.animateSpark();
 
+    setInterval(()=>{
+      this.network.addSpark();
+    },1000);
   }
 
   resizeCanvas(){
     this.canvas.height = this.wrapper.clientHeight;
     this.canvas.width = this.wrapper.clientWidth;
-    this.network.drawNeurons();
   }
 
 }
 
 const app = new App();
-window.app = app;
