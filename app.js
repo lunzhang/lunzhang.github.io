@@ -14,9 +14,16 @@ export class App{
       this.resizeCanvas();
     });
 
-    setInterval(()=>{
-      this.network.addSpark();
-    },1000);
+    this.addSpark();
+
+  }
+
+  addSpark(){
+    let addSpark = Math.random();
+    if(addSpark > .95) this.network.addSpark();
+    requestAnimationFrame(()=>{
+      this.addSpark();
+    });
   }
 
   resizeCanvas(){
