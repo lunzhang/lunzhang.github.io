@@ -14,11 +14,16 @@ export default class Neuron{
     draw(ctx){
       let ratioX = ctx.canvas.width / 1600;
       let ratioY = ctx.canvas.height / 800;
+      let x = this.x * ratioX;
+      let y = this.y * ratioY;
 
       //draw neuron
       ctx.beginPath();
-      ctx.arc(ratioX*this.x,ratioY*this.y, this.size,0,2*Math.PI);
-      ctx.fill();
+      let radgrad = ctx.createRadialGradient(x,y,0,x,y,this.size*5);
+      radgrad.addColorStop(0, '#ffffff');
+      radgrad.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.fillStyle = radgrad;
+      ctx.fillRect(x-this.size*5,y-this.size*5,this.size*10,this.size*10);
 
       //draw neuron connections
       ctx.lineWidth = this.lineWidth;

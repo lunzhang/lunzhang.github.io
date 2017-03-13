@@ -8,7 +8,7 @@ export default class Spark{
     this.id = config.id;
     this.currentTarget = 1;
     this.paths = [];
-    this.speed = Math.ceil(Math.random()*25);
+    this.speed = Math.ceil(Math.random()*20);
     this.init();
   }
 
@@ -60,6 +60,7 @@ export default class Spark{
   draw(ctx){
     let x = this.x * ctx.canvas.width / 1600;
     let y = this.y * ctx.canvas.height / 800;
+
     let radgrad = ctx.createRadialGradient(x, y, 1, x, y, 10);
 
     //draw spark
@@ -84,6 +85,8 @@ export default class Spark{
     let dist = Math.sqrt(dx*dx+dy*dy);
     let velX = (dx/dist)*this.speed;
     let velY = (dy/dist)*this.speed;
+    velX = isNaN(velX) ? 0 : velX;
+    velY = isNaN(velY) ? 0 : velY;
 
     this.x += velX;
     this.y += velY;

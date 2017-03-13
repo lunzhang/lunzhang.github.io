@@ -25,8 +25,6 @@ export default class Network{
   drawNeurons(){
     let ctx = this.canvas.getContext('2d');
     ctx.strokeStyle = 'white';
-    ctx.shadowBlur = 10;
-    ctx.shadowColor = 'white';
     ctx.fillStyle = 'white';
 
     for(let prop in this.neurons){
