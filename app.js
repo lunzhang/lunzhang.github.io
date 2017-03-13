@@ -20,7 +20,7 @@ export class App{
 
   addSpark(){
     let addSpark = Math.random();
-    if(addSpark > .95) this.network.addSpark();
+    if(addSpark > .975) this.network.addSpark();
     requestAnimationFrame(()=>{
       this.addSpark();
     });
