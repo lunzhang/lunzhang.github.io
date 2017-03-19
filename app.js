@@ -27,8 +27,17 @@ export class App{
   }
 
   resizeCanvas(){
-    this.canvas.height = this.wrapper.clientHeight;
-    this.canvas.width = this.wrapper.clientWidth;
+    if(this.wrapper.clientHeight > 380){
+        this.canvas.height = 380;
+    }else{
+      this.canvas.height = this.wrapper.clientHeight;
+    }
+    if(this.wrapper.clientWidth > 450){
+      this.canvas.width = 450;
+    }else{
+      this.canvas.width = this.wrapper.clientWidth;
+    }
+
   }
 
 }

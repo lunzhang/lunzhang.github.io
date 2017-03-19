@@ -1,41 +1,41 @@
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
-
+/******/
 /******/ 	// The require function
 /******/ 	function __webpack_require__(moduleId) {
-
+/******/
 /******/ 		// Check if module is in cache
 /******/ 		if(installedModules[moduleId])
 /******/ 			return installedModules[moduleId].exports;
-
+/******/
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
 /******/ 			l: false,
 /******/ 			exports: {}
 /******/ 		};
-
+/******/
 /******/ 		// Execute the module function
 /******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
-
+/******/
 /******/ 		// Flag the module as loaded
 /******/ 		module.l = true;
-
+/******/
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
-
-
+/******/
+/******/
 /******/ 	// expose the modules object (__webpack_modules__)
 /******/ 	__webpack_require__.m = modules;
-
+/******/
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
-
+/******/
 /******/ 	// identity function for calling harmony imports with the correct context
 /******/ 	__webpack_require__.i = function(value) { return value; };
-
+/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -46,7 +46,7 @@
 /******/ 			});
 /******/ 		}
 /******/ 	};
-
+/******/
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
 /******/ 	__webpack_require__.n = function(module) {
 /******/ 		var getter = module && module.__esModule ?
@@ -55,13 +55,13 @@
 /******/ 		__webpack_require__.d(getter, 'a', getter);
 /******/ 		return getter;
 /******/ 	};
-
+/******/
 /******/ 	// Object.prototype.hasOwnProperty.call
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
-
+/******/
 /******/ 	// __webpack_public_path__
 /******/ 	__webpack_require__.p = "/build/";
-
+/******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 15);
 /******/ })
@@ -586,7 +586,7 @@ exports = module.exports = __webpack_require__(1)();
 
 
 // module
-exports.push([module.i, "html {\n  height: 100%; }\n\nbody {\n  font-family: Noto,Roboto;\n  background-color: #000000;\n  color: #ffffff;\n  height: 100%; }\n\n.fa-github {\n  font-size: 40px; }\n  .fa-github:hover {\n    color: #F8BBD0; }\n\n.vertical-center {\n  margin: auto;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  height: 0px;\n  right: 0; }\n\n#navbar {\n  top: 0;\n  position: fixed;\n  right: 0;\n  left: 0;\n  z-index: 1;\n  height: 90px;\n  background-color: black;\n  border-bottom: 1px solid white;\n  text-align: center; }\n  #navbar .nav-item {\n    position: relative;\n    display: inline-block;\n    height: 100%;\n    width: 100px;\n    line-height: 100px; }\n    #navbar .nav-item a {\n      height: 100%;\n      font-size: 24px;\n      color: white; }\n\n#main {\n  position: relative;\n  padding-top: 90px;\n  text-align: center;\n  height: 100%; }\n  #main h1 {\n    font-size: 48px; }\n  #main h4 {\n    font-size: 24px; }\n\n#world-wrapper {\n  position: relative;\n  width: 100%;\n  height: 100%; }\n  #world-wrapper #world {\n    position: absolute;\n    top: 0;\n    left: 0; }\n\n@media (max-width: 768px) {\n  #main h1 {\n    font-size: 32px; }\n  #main h4 {\n    font-size: 16px; }\n  #navbar .nav-item {\n    width: 75px; }\n    #navbar .nav-item a {\n      font-size: 20px; } }\n", ""]);
+exports.push([module.i, "html {\n  height: 100%; }\n\nbody {\n  font-family: Noto,Roboto;\n  background-color: #000000;\n  color: #ffffff;\n  height: 100%; }\n\n.fa-github {\n  font-size: 40px; }\n  .fa-github:hover {\n    color: #F8BBD0; }\n\n.vertical-center {\n  margin: auto;\n  position: absolute;\n  top: 0;\n  left: 0;\n  bottom: 0;\n  height: 0px;\n  right: 0; }\n\n#navbar {\n  top: 0;\n  position: fixed;\n  right: 0;\n  left: 0;\n  z-index: 1;\n  height: 90px;\n  background-color: black;\n  border-bottom: 1px solid white;\n  text-align: center; }\n  #navbar .nav-item {\n    position: relative;\n    display: inline-block;\n    height: 100%;\n    width: 100px;\n    line-height: 100px; }\n    #navbar .nav-item a {\n      height: 100%;\n      font-size: 24px;\n      color: white; }\n\n#main {\n  position: relative;\n  padding-top: 90px;\n  text-align: center;\n  height: 100%; }\n  #main h1 {\n    font-size: 48px; }\n  #main h4 {\n    font-size: 24px; }\n\n#world-wrapper {\n  position: relative;\n  width: 100%;\n  height: 100%;\n  overflow: hidden; }\n  #world-wrapper #world {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    transform: translate(-50%, -50%); }\n\n@media (max-width: 768px) {\n  #main h1 {\n    font-size: 32px; }\n  #main h4 {\n    font-size: 16px; }\n  #navbar .nav-item {\n    width: 75px; }\n    #navbar .nav-item a {\n      font-size: 20px; } }\n", ""]);
 
 // exports
 
@@ -817,8 +817,17 @@ class App{
   }
 
   resizeCanvas(){
-    this.canvas.height = this.wrapper.clientHeight;
-    this.canvas.width = this.wrapper.clientWidth;
+    if(this.wrapper.clientHeight > 380){
+        this.canvas.height = 380;
+    }else{
+      this.canvas.height = this.wrapper.clientHeight;
+    }
+    if(this.wrapper.clientWidth > 450){
+      this.canvas.width = 450;
+    }else{
+      this.canvas.width = this.wrapper.clientWidth;
+    }
+
   }
 
 }
