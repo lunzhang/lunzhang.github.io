@@ -10,7 +10,8 @@ body{
 }
 
 .fa-github{
-  font-size: 40px;
+  font-size: 32px;
+  color:white;
   &:hover{
     color: #F8BBD0;
   }
@@ -66,7 +67,7 @@ body{
 #world-wrapper{
   position: relative;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 35px);
   overflow: hidden;
   #world{
     position: absolute;
