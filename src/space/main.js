@@ -17,7 +17,7 @@ export default class Space{
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(this.wrapper.clientWidth, this.wrapper.clientHeight);
 
-    //creates circles group with 1000 circles
+    //creates circle group with 1000 circles
     let circle = Math.PI * 2;
     let program = function (context) {
       context.beginPath();
@@ -53,10 +53,9 @@ export default class Space{
     });
 
     if(this.end){
-      this.group.rotation.x += 0.0005;
       this.group.rotation.y += 0.0005;
     }else if(this.camera.position.y > -5500 && this.end == false){
-      this.speed+= 0.05;
+      this.speed+= 0.1;
       this.camera.position.y = this.camera.position.y - this.speed;
     }else if(this.end == false){
       this.onFinish();
@@ -65,9 +64,10 @@ export default class Space{
       this.camera.position.y = 0;
       this.camera.updateProjectionMatrix();
       this.group.children.forEach((circle)=>{
-        circle.position.y = Math.random() * 2000 - 1000;
-        circle.position.x = Math.random() * 2000 - 1000;
-        circle.position.z = Math.random() * 2000 - 1000;
+        circle.position.y = Math.round(Math.random() * 2000 - 1000);
+        circle.position.x = Math.round(Math.random() * 2000 - 1000);
+        circle.position.z = Math.round(Math.random() * 2000 - 1000);
+        circle.ogposition = circle.position;
       });
       this.end = true;
     }
