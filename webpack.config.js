@@ -1,11 +1,29 @@
 var path = require('path');
 
-module.exports={
+module.exports=[{
   entry:{
     'app':'./app.js'
   },
   output:{
       filename : 'bundle.js',
+      path: path.resolve(__dirname,'build'),
+      publicPath: '/build/'
+  },
+  module:{
+    loaders:[
+      {
+        test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
+        loader: 'file-loader'
+      }
+    ]
+  }
+},
+{
+  entry:{
+    'style':'./style.js'
+  },
+  output:{
+      filename : 'style.js',
       path: path.resolve(__dirname,'build'),
       publicPath: '/build/'
   },
@@ -18,11 +36,11 @@ module.exports={
       {
          test: /\.scss$/,
          loaders: [ 'style-loader', 'css-loader', 'sass-loader']
-      }
-      ,{
+      },
+      {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'file-loader'
       }
     ]
   }
-};
+}];
