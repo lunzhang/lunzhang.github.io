@@ -58,6 +58,7 @@ body{
   height: 100%;
   overflow: hidden;
   h1{
+    color:#efd34b;
     font-size: 48px;
   }
   h4{
@@ -90,6 +91,41 @@ body{
   visibility: hidden;
 }
 
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    left: 0;
+    z-index: 1;
+    border:1px solid white;
+    border-bottom: none;
+    a{
+      display: block;
+      line-height: 60px;
+      font-size: 18px !important;
+      border-bottom: 1px solid white;
+    }
+}
+.show{
+  display:block;
+}
+.dropbtn{
+  background: none;
+  border:none;
+  font-size: 24px;
+  cursor: pointer;
+  height: 100%;
+}
+.dropbtn:hover{
+  text-decoration: underline;
+}
+.dropdown-item{
+  height: 50px;
+}
+
 .footer{
   position: absolute;
   bottom:0px;
@@ -98,6 +134,9 @@ body{
 }
 
 @media(max-width:768px){
+  .dropbtn{
+    font-size:20px;
+  }
   #main{
     h1{
       font-size: 32px;
@@ -112,6 +151,11 @@ body{
       a{
         font-size:20px;
       }
+    }
+  }
+  .dropdown-content{
+    a{
+      font-size: 12px !important;
     }
   }
 }

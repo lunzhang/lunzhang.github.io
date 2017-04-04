@@ -11,3 +11,7 @@ import Space from './src/space/main.js';
   };
 
 })();
+
+window.toggleDrop = function(){
+  document.getElementById("myDropdown").classList.toggle("show");
+}

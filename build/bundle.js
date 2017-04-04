@@ -43501,7 +43501,7 @@ class Ninja{
 class Space{
 
   constructor(){
-    this.speed = 5;
+    this.speed = 1;
     this.end = false;
     this.wrapper = document.getElementById('weather-wrapper');
     this.scene = new __WEBPACK_IMPORTED_MODULE_0__three_js__["Scene"]();
@@ -43529,7 +43529,7 @@ class Space{
       particle.position.y = Math.random() * -5000 - 500;
       particle.position.x = Math.random() * 1000 - 500;
       particle.position.z = Math.random() * 1000 - 500;
-      particle.scale.x = particle.scale.y = Math.random() * 10 + 5;
+      particle.scale.x = particle.scale.y = Math.random() * 10 + 10;
       this.group.add(particle);
     }
 
@@ -43551,7 +43551,7 @@ class Space{
     if(this.end){
       this.group.rotation.y += 0.0005;
     }else if(this.camera.position.y > -5500 && this.end == false){
-      this.speed+= 0.1;
+      this.speed+= 0.5;
       this.camera.position.y = this.camera.position.y - this.speed;
     }else if(this.end == false){
       this.onFinish();
@@ -43604,6 +43604,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   };
 
 })();
+
+window.toggleDrop = function(){
+  document.getElementById("myDropdown").classList.toggle("show");
+}
 
 
 /***/ }),
