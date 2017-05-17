@@ -43501,9 +43501,12 @@ class Ninja{
 class Space{
 
   constructor(){
+    this.mouseX = 1;
+    this.mouseY = 1;
     this.speed = 1;
     this.end = false;
-    this.wrapper = document.getElementById('weather-wrapper');
+    this.wrapper = document.getElementById('space-wrapper');
+    this.startBtn = document.getElementById('start-btn');
     this.scene = new __WEBPACK_IMPORTED_MODULE_0__three_js__["Scene"]();
     this.camera = new __WEBPACK_IMPORTED_MODULE_0__three_js__["PerspectiveCamera"]( 90, window.innerWidth / window.innerHeight, 1, 3000 );
     this.camera.rotation.x = -1.5;
@@ -43512,6 +43515,8 @@ class Space{
     this.renderer = new __WEBPACK_IMPORTED_MODULE_0__three_js__["CanvasRenderer"]();
     this.renderer.setPixelRatio(window.devicePixelRatio);
     this.renderer.setSize(this.wrapper.clientWidth, this.wrapper.clientHeight);
+    this.wrapperHalfX = this.wrapper.clientWidth/2;
+    this.wrapperHalfY = this.wrapper.clientHeight/2;
 
     //creates circle group with 1000 circles
     let circle = Math.PI * 2;
@@ -43539,7 +43544,39 @@ class Space{
       this.resizeCanvas();
     });
 
-    this.animate();
+    document.addEventListener('mousemove', this.onDocumentMouseMove.bind(this), false );
+    document.addEventListener('touchstart', this.onDocumentTouch.bind(this), false );
+    document.addEventListener('touchmove', this.onDocumentTouch.bind(this), false );
+    document.addEventListener('wheel', this.onMouseWheel.bind(this), false );
+
+    this.startBtn.onclick = (e)=>{
+      this.startBtn.style.display = "none";
+      this.animate();
+    };
+
+  }
+
+  onDocumentMouseMove(e){
+    this.mouseX = e.clientX - this.wrapperHalfX;
+    this.mouseY = e.clientY - this.wrapperHalfY;
+  }
+
+  onDocumentTouch(e){
+    if (e.touches.length === 1 ){
+      e.preventDefault();
+      this.mouseX = e.touches[ 0 ].pageX - this.wrapperHalfX;
+      this.mouseY = e.touches[ 0 ].pageY - this.wrapperHalfY;
+    }
+  }
+
+  onMouseWheel(e){
+    if(this.end){
+      if(this.camera.position.z < 2000 && e.deltaY > 0){
+        this.camera.position.z += e.deltaY;
+      }else if(this.camera.position.z > -500 && e.deltaY < 0){
+        this.camera.position.z += e.deltaY;
+      }
+    }
   }
 
   animate() {
@@ -43549,11 +43586,12 @@ class Space{
     });
 
     if(this.end){
-      this.group.rotation.y += 0.0005;
+      this.group.rotation.x += (0.0001 * this.mouseY/25);
+      this.group.rotation.y += (0.0005 * this.mouseX/25);
     }else if(this.camera.position.y > -5500 && this.end == false){
       this.speed+= 0.5;
       this.camera.position.y = this.camera.position.y - this.speed;
-    }else if(this.end == false){
+    }else{
       this.onFinish();
       this.camera.rotation.x = 0;
       this.camera.position.z = 1000;
@@ -43576,6 +43614,8 @@ class Space{
     this.camera.aspect = this.wrapper.clientWidth / this.wrapper.clientHeight;
     this.camera.updateProjectionMatrix();
     this.renderer.setSize( this.wrapper.clientWidth, this.wrapper.clientHeight );
+    this.wrapperHalfX = this.wrapper.clientWidth/2;
+    this.wrapperHalfY = this.wrapper.clientHeight/2;
   }
 
 }
