@@ -12,6 +12,10 @@ import Space from './src/space/main.js';
 
 })();
 
-window.toggleDrop = function(){
-  document.getElementById("myDropdown").classList.toggle("show");
+window.toggleProjects = function(){
+  document.getElementById("projectsDropdown").classList.toggle("show");
+}
+
+window.toggleGames = function(){
+  document.getElementById("gamesDropdown").classList.toggle("show");
 }

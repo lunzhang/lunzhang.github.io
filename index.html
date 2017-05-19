@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Lun Zhang</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <script src="build/style.js"></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  <head>
+    <title>Lun Zhang</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <script src="build/style.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-97505174-3', 'auto');
-  ga('send', 'pageview');
+    ga('create', 'UA-97505174-3', 'auto');
+    ga('send', 'pageview');
 
-</script>
-</head>
-<body>
-  <div id="navbar">
-    <div class="nav-item">
-      <div onclick="toggleDrop()" class="dropbtn">Games</div>
-      <div id="myDropdown" class="dropdown-content">
-          <a href="https://lunzhang.github.io/screamyfish/">Screamy Fish</a>
-          <a href="https://lunzhang.github.io/sounddash/">Sound Dash</a>
+  </script>
+  </head>
+  <body>
+    <div id="navbar">
+      <div class="nav-item">
+        <div onclick="toggleGames()" class="dropbtn">Games</div>
+        <div id="gamesDropdown" class="dropdown-content">
+            <a href="https://github.com/lunzhang/tank3d">Tank3d</a>
+            <a href="https://github.com/lunzhang/ng2-tetris">Tetris</a>
+            <a href="https://github.com/lunzhang/screamyfish">Screamy Fish</a>
+            <a href="https://github.com/lunzhang/sounddash">Sound Dash</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <div onclick="toggleProjects()" class="dropbtn">Projects</div>
+        <div id="projectsDropdown" class="dropdown-content">
+            <a href="https://github.com/lunzhang/ng2-grid">Ng2 Grid</a>
+            <a href="https://github.com/lunzhang/poller">Poller</a>
+            <a href="https://github.com/lunzhang/arHeart">AR Heart</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="Lun.Zhang.Resume.pdf">Resume</a>
       </div>
     </div>
-    <div class="nav-item">
-      <a href="https://lunzhang.github.io/ng2">Ng2</a>
+    <div id="main">
+      <div id="space-wrapper">
+          <button id="start-btn">
+              Start
+          </button>
+      </div>
+      <div id="intro" class="vertical-center">
+        <h1>
+          Hello World
+        </h1>
+        <h1>
+          I'm Lun
+        </h1>
+      </div>
+      <div class="footer">
+        <a href="https://github.com/lunzhang">
+          <i class="fa fa-github"> </i>
+        </a>
+      </div>
     </div>
-    <div class="nav-item">
-      <a href="https://lunzhang.github.io/ng">Ng</a>
-    </div>
-    <div class="nav-item">
-      <a href="Lun.Zhang.Resume.pdf">Resume</a>
-    </div>
-  </div>
-  <div id="main">
-    <div id="space-wrapper">
-        <button id="start-btn">
-            Start
-        </button>
-    </div>
-    <div id="intro" class="vertical-center">
-      <h1>
-        Hello World
-      </h1>
-      <h1>
-        I'm Lun
-      </h1>
-    </div>
-    <div class="footer">
-      <a href="https://github.com/lunzhang">
-        <i class="fa fa-github"> </i>
-      </a>
-    </div>
-  </div>
-</body>
-<script src="build/bundle.js"></script>
+  </body>
+  <script src="build/bundle.js"></script>
 </html>
