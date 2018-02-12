@@ -1,0 +1,105 @@
+ML AND DEEP LEARNING
+--------------------------------------------------------------------------------------------------------------
+Machine Learning - learn by example, show examples and then learn from it to make predications
+
+supervised - examples are labeled - training set
+
+unsupervised - unlabeled examples, examples are grouped in difference ex. faces are grouped differently
+from landscapes
+
+reinforcement learning- learn and relearn based on actions and outcomes
+	q-learning - off policy - any policy to maximize reward
+
+Generic Neural Network Layers
+
+full connected layer - layer of neurons that perform weighted addition on all inputs and pass
+them through nonlinearity
+
+regression(l2) layer - output layer
+
+Convolutional Network Layers - 3rd volume depth x height x width
+
+convolution layer - neurons are connected to only few nuerons below and parameters are shared, changes
+volume depending on number of filters ex. 32x32x3 to 32x32x12 with 12 filters
+
+RELU layer - apply activation function leaving volume unchange
+
+pool layer -  downsampling opreation decreasing widthxheight ex. 32x32x12 to 16x16x12
+
+FC layer - computer class scores resulting in 1x1x? ? = class scores
+
+convolutional vs recurrent = fixed input vs varying input size
+
+Recurrent Network Layers - uses internal memeory to process inputs
+
+forward propagation - apply input and calculate output
+back progragation - calculate error of output and adjust input to decrease error
+--------------------------------------------------------------------------------------------------------------
+
+COMPUTER VISION
+--------------------------------------------------------------------------------------------------------------
+Color Correct - multiply RGB by constants
+"white world" - brightest pixel is white - divide by largest value
+"gray world" - average value is gray - (r+g+b)/3
+
+Image Filtering
+– Enhance images
+  • Denoise, smooth, increase contrast, etc.
+– Extract information from images
+  • Texture, edges, distinctive points, etc.
+– Detect patterns
+  • Template matching
+
+Algorithm for downsampling by factor of 2
+1. Start with image(h, w)
+2. Apply low-pass filter
+im_blur = imfilter(image, fspecial(‘gaussian’, 7, 1))
+3. Sample every other pixel
+im_small = im_blur(1:2:end, 1:2:end);
+
+• Keypoint detection: repeatable
+and distinctive
+– Corners, blobs, stable regions
+– Harris, DoG, FAST
+Descriptors: robust and selective
+– spatial histograms of orientation
+– SIFT
+
+Optical flow is the pattern of apparent motion of image objects between two consecutive frames 
+caused by the movemement of object or camera
+
+FAST corner detector - circle of 16 pixels to classify if a point is a corner
+Each pixel in the circle is labeled from integer number 1 to 16 clockwise. 
+If a set of N contiguous pixels in the circle are all brighter than the intensity of candidate pixel p plus a threshold value t 
+or all darker than the intensity of candidate pixel p minus threshold value t, then p is classified as corner
+N is usually 12
+High Speed Test - for N = 12 -> 1,5,9,13 three out of four has to pass
+
+
+Kanade–Lucas–Tomasi feature tracker - track features from one image to another using Lucas Kanade method on pyramids
+
+Lucas–Kanade method - finds the optical flow of an image
+
+Optical flow - apparent motion of brightness patterns in the image
+
+RANSAC 
+1. Select a random subset of the original data. Call this subset the hypothetical inliers.
+2. A model is fitted to the set of hypothetical inliers.
+3. All other data are then tested against the fitted model. Those points that fit the estimated model well, according to some model-specific loss function, are considered as part of the consensus set.
+4. The estimated model is reasonably good if sufficiently many points have been classified as part of the consensus set.
+5. Afterwards, the model may be improved by reestimating it using all members of the consensus set.
+
+5 POINT ALGORITHM MADE EASY
+1. Write down the five epipolar equations of the five points. m1^T * F * m2 = 0
+2. Compute the null-space of the essential matrix.
+3. Compute the symbolic determinant of the coefficient matrix C(z). Solving the determinant equation, one then find the solution z.
+4. Back-substitute the real roots of z. Compute the null-space
+of C(z) and extract x, y from the null-space.
+5. Recover the essential matrix, and extract the motion vectors.
+
+
+REACT
+-------------------------------------------------------
+Functional stateless component - just renders data, doesn't have any actions to perform
+Pure Components - rerenders only when props/state are changed, must be immutable because it does a shallow compare
+Component - only use when implementing own shouldComponentUpdate 
