@@ -43,27 +43,27 @@ Color Correct - multiply RGB by constants
 "gray world" - average value is gray - (r+g+b)/3
 
 Image Filtering
-– Enhance images
-  • Denoise, smooth, increase contrast, etc.
-– Extract information from images
-  • Texture, edges, distinctive points, etc.
-– Detect patterns
-  • Template matching
+â€“ Enhance images
+  â€¢ Denoise, smooth, increase contrast, etc.
+â€“ Extract information from images
+  â€¢ Texture, edges, distinctive points, etc.
+â€“ Detect patterns
+  â€¢ Template matching
 
 Algorithm for downsampling by factor of 2
 1. Start with image(h, w)
 2. Apply low-pass filter
-im_blur = imfilter(image, fspecial(‘gaussian’, 7, 1))
+im_blur = imfilter(image, fspecial(â€˜gaussianâ€™, 7, 1))
 3. Sample every other pixel
 im_small = im_blur(1:2:end, 1:2:end);
 
-• Keypoint detection: repeatable
+â€¢ Keypoint detection: repeatable
 and distinctive
-– Corners, blobs, stable regions
-– Harris, DoG, FAST
+â€“ Corners, blobs, stable regions
+â€“ Harris, DoG, FAST
 Descriptors: robust and selective
-– spatial histograms of orientation
-– SIFT
+â€“ spatial histograms of orientation
+â€“ SIFT
 
 Optical flow is the pattern of apparent motion of image objects between two consecutive frames 
 caused by the movemement of object or camera
@@ -76,9 +76,9 @@ N is usually 12
 High Speed Test - for N = 12 -> 1,5,9,13 three out of four has to pass
 
 
-Kanade–Lucas–Tomasi feature tracker - track features from one image to another using Lucas Kanade method on pyramids
+Kanadeâ€“Lucasâ€“Tomasi feature tracker - track features from one image to another using Lucas Kanade method on pyramids
 
-Lucas–Kanade method - finds the optical flow of an image
+Lucasâ€“Kanade method - finds the optical flow of an image
 
 Optical flow - apparent motion of brightness patterns in the image
 
@@ -103,3 +103,14 @@ REACT
 Functional stateless component - just renders data, doesn't have any actions to perform
 Pure Components - rerenders only when props/state are changed, must be immutable because it does a shallow compare
 Component - only use when implementing own shouldComponentUpdate 
+
+System Design and Scaling
+-------------------------------------------------------
+Load balancing - scale horizontally by distributing traffic across servers
+Caching - Application cache - check if value is in cache, if not retrieve value from database
+	- Database cache - database comes with default caching and performance
+	- In-memory cache - data stored in memory ex. Redis, RAM is faster than disk
+	- Network cache - cache static files using CDNs or Nginx
+MapReduce - split data to be processed by map tasks parallely.  Then put processed data into reduce task to create output.
+Platform layer - Create a platform layer between web app and database.  Therefore other products can reuse the platform
+		like mobile apps, apis, other web apps etc....
