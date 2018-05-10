@@ -114,3 +114,5 @@ Caching - Application cache - check if value is in cache, if not retrieve value 
 MapReduce - split data to be processed by map tasks parallely.  Then put processed data into reduce task to create output.
 Platform layer - Create a platform layer between web app and database.  Therefore other products can reuse the platform
 		like mobile apps, apis, other web apps etc....
+Microservices 	- break down tasks into different services 
+		- services communicate through gRPC which uses protobuf definitions
